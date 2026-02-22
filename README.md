@@ -1,12 +1,9 @@
 # Mental Health Text Classification
-
-A reproducible NLP research project comparing **classical machine learning** (TF-IDF + Logistic Regression) and **deep learning** (fine-tuned BERT) for binary depression vs non-depression text classification. The project is structured for clarity, evaluation rigour, and easy replication.
-
 ---
 
 ## Purpose and objectives
 
-The main objective of this project is to **compare a classical ML approach** (TF-IDF + Logistic Regression) and a **deep learning approach** (fine-tuned BERT) for **binary text classification**: distinguishing depression-related vs non-depression posts (e.g. from Reddit or similar social media).
+The main objective of this project is to **compare a classical ML approach** (TF-IDF + Logistic Regression) and a **deep learning approach** (fine-tuned BERT) for **binary text classification**: distinguishing depression-related vs non-depression posts (e.g. from Reddit or similar social media)!
 
 - **Why it matters:** It tests whether a simple, interpretable baseline is “good enough” or whether a more complex model (BERT) is worth the extra cost (data, compute, interpretability) for this kind of mental-health text.
 - **Deliverables:** Reproducible training and evaluation (same 80/20 stratified split, same metrics), saved metrics, confusion matrices for both models, and a comparison table so you can justify model choice for downstream or larger systems.
@@ -63,37 +60,6 @@ Both models are evaluated on accuracy, precision, recall, F1-score, and a classi
 
 For mental health text, class imbalance is common, so precision, recall, and F1 (and the full classification report) are more informative than accuracy alone.
 
----
-
-## Installation and usage
-
-### Requirements
-
-- Python 3.8+
-- Install dependencies: `pip install -r requirements.txt`
-
-### Running the models
-
-- **Baseline only:**  
-  `python run_baseline.py`  
-  Writes `results/baseline_metrics.txt` and `results/confusion_matrix_baseline.png`.
-
-- **BERT only:**  
-  `python run_bert.py`  
-  Writes `results/bert_metrics.txt`.
-
-- **Both + comparison table:**  
-  `python run_all.py`  
-  Runs baseline and BERT, writes both metric files and the confusion matrix plot, then generates `results/comparison_table.md`.
-
-Optional arguments (all scripts):
-
-- `--data PATH` — path to CSV (default: `data/dataset.csv`).
-- `--results-dir DIR` — output directory (default: `results`).
-
-For BERT / run_all:
-
-- `--epochs N` — number of BERT training epochs (default: 3).
 
 ---
 
@@ -160,6 +126,11 @@ Automated mental health detection raises serious ethical issues: risk of **stigm
 ### Model complexity vs performance
 
 The **baseline** is fast, interpretable (e.g. via coefficients or feature importance), and works well with limited data. **BERT** can capture more context and nuance but requires more data and compute and is harder to interpret. The comparison table helps decide whether the performance gain from BERT justifies its complexity; on small or narrow-domain datasets, the baseline can be competitive or preferable.
+
+### Concerns about oversimplifications
+
+Binary classification—labeling texts simply as “depression” or “non-depression”—is too simplistic because it ignores uncertainty and gradations of risk. In reality, mental health signals are subtle and vary over time. By moving to probabilistic outputs, the model can provide calibrated likelihoods (e.g., 70% chance of depression), allowing more nuanced assessment, earlier detection, and flexible thresholds for intervention. **Future work should focus on calibrating these probabilities so they accurately reflect real-world risk, rather than relying on a rigid yes/no decision.**
+
 
 ---
 
