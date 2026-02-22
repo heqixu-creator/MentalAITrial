@@ -1,0 +1,18 @@
+Baseline (TF-IDF + Logistic Regression) - Test Set Metrics
+==================================================
+accuracy: 0.9683
+precision: 0.9825
+recall: 0.9531
+f1: 0.9676
+
+Classification Report:
+                precision    recall  f1-score   support
+
+non-depression       0.96      0.98      0.97       780
+    depression       0.98      0.95      0.97       767
+
+      accuracy                           0.97      1547
+     macro avg       0.97      0.97      0.97      1547
+  weighted avg       0.97      0.97      0.97      1547
+
+Confusion matrix plot: results/confusion_matrix_baseline.png

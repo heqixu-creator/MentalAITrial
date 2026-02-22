@@ -1,0 +1,18 @@
+BERT (bert-base-uncased) - Test Set Metrics
+==================================================
+accuracy: 0.9787
+precision: 0.9779
+recall: 0.9791
+f1: 0.9785
+
+Classification Report:
+                precision    recall  f1-score   support
+
+non-depression       0.98      0.98      0.98       780
+    depression       0.98      0.98      0.98       767
+
+      accuracy                           0.98      1547
+     macro avg       0.98      0.98      0.98      1547
+  weighted avg       0.98      0.98      0.98      1547
+
+Confusion matrix plot: results/confusion_matrix_bert.png
