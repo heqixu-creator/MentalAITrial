@@ -5,7 +5,7 @@
 
 The main objective of this project is to **compare a classical ML approach** (TF-IDF + Logistic Regression) and a **deep learning approach** (fine-tuned BERT) for **binary text classification**: distinguishing depression-related vs non-depression posts (e.g. from Reddit or similar social media)!
 
-- **Why it matters:** It tests whether a simple, interpretable baseline is “good enough” or whether a more complex model (BERT) is worth the extra cost (data, compute, interpretability) for this kind of mental-health text.
+- **Why it matters:** It tests whether a simple, interpretable baseline is “good enough” or whether a more complex model (BERT) is worth the extra cost for this kind of mental-health text.
 - **Deliverables:** Reproducible training and evaluation (same 80/20 stratified split, same metrics), saved metrics, confusion matrices for both models, and a comparison table so you can justify model choice for downstream or larger systems.
 
 ---
