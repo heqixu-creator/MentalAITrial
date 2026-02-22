@@ -60,6 +60,26 @@ Both models are evaluated on accuracy, precision, recall, F1-score, and a classi
 
 For mental health text, class imbalance is common, so precision, recall, and F1 (and the full classification report) are more informative than accuracy alone.
 
+Installation and usage
+Requirements
+Python 3.8+
+Install dependencies: pip install -r requirements.txt
+Running the models
+Baseline only:
+python run_baseline.py
+Writes results/baseline_metrics.txt and results/confusion_matrix_baseline.png.
+BERT only:
+python run_bert.py
+Writes results/bert_metrics.txt.
+Both + comparison table:
+python run_all.py
+Runs baseline and BERT, writes both metric files and the confusion matrix plot, then generates results/comparison_table.md.
+Optional arguments (all scripts):
+--data PATH — path to CSV (default: data/dataset.csv).
+--results-dir DIR — output directory (default: results).
+For BERT / run_all:
+--epochs N — number of BERT training epochs (default: 3).
+
 
 ---
 
